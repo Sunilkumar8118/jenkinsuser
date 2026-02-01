@@ -32,13 +32,13 @@ class CurddemoApplicationTests {
 				.andExpect(jsonPath("$.name").value("John"));
 	}
 
-//	@Test
-//	void testGetUsers() throws Exception {
-//		userRepository.save(new User() {{ setName("Alice"); setEmail("alice@example.com"); }});
-//		mockMvc.perform(get("/api/users"))
-//				.andExpect(status().isOk())
-//				.andExpect(jsonPath("$[0].name").exists());
-//	}
+	@Test
+	void testGetUsers() throws Exception {
+		userRepository.save(new User() {{ setName("Alice"); setEmail("alice@example.com"); }});
+		mockMvc.perform(get("/api/users"))
+				.andExpect(status().isOk())
+				.andExpect(jsonPath("$[0].name").exists());
+	}
 //
 //	@Test
 //	void testUpdateUser() throws Exception {
